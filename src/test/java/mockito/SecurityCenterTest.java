@@ -9,6 +9,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import static org.mockito.Mockito.*;
+
 @ExtendWith(MockitoExtension.class)
 public class SecurityCenterTest {
     /* 需求描述：
@@ -29,5 +31,6 @@ public class SecurityCenterTest {
     @Test
     public void shouldVerifyDoorIsClosed() {
         securityCenter.switchOn();
+        verify(doorPanel, times(1)).close();
     }
 }
